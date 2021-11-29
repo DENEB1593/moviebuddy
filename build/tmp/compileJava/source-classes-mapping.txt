@@ -5,8 +5,10 @@ moviebuddy/ApplicationException.java
  moviebuddy.ApplicationException$UndefinedCommandActionException
 moviebuddy/util/FileSystemUtils.java
  moviebuddy.util.FileSystemUtils
-moviebuddy/Movie.java
- moviebuddy.Movie
+moviebuddy/domain/Movie.java
+ moviebuddy.domain.Movie
 moviebuddy/MovieBuddyApplication.java
  moviebuddy.MovieBuddyApplication
  moviebuddy.MovieBuddyApplication$Command
+moviebuddy/domain/MovieFinder.java
+ moviebuddy.domain.MovieFinder
