@@ -7,7 +7,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.glassfish.jaxb:jaxb-runtime:3.0.1'
+    implementation 'org.projectlombok:lombok:1.18.22'
 
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
 java {

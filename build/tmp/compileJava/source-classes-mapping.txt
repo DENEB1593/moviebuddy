@@ -1,3 +1,5 @@
+moviebuddy/domain/XmlMovieReader.java
+ moviebuddy.domain.XmlMovieReader
 moviebuddy/ApplicationException.java
  moviebuddy.ApplicationException
  moviebuddy.ApplicationException$CommandNotFoundException
@@ -7,8 +9,10 @@ moviebuddy/util/FileSystemUtils.java
  moviebuddy.util.FileSystemUtils
 moviebuddy/domain/Movie.java
  moviebuddy.domain.Movie
-moviebuddy/domain/XmlMovieReader.java
- moviebuddy.domain.XmlMovieReader
+moviebuddy/domain/JaxbMovieReader.java
+ moviebuddy.domain.JaxbMovieReader
+ moviebuddy.domain.JaxbMovieReader$MovieData
+ moviebuddy.domain.JaxbMovieReader$MovieMetaData
 moviebuddy/domain/MovieReader.java
  moviebuddy.domain.MovieReader
 moviebuddy/domain/CsvMovieReader.java
