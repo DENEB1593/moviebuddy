@@ -6,7 +6,11 @@ import java.util.stream.Collectors;
 
 public class MovieFinder {
 
-    private MovieReader movieFinder = new CsvMovieReader();
+    private final MovieReader movieFinder;
+
+    public MovieFinder(MovieReader movieReader) {
+        this.movieFinder = Objects.requireNonNull(movieReader);
+    }
 
     /**
      * 저장된 영화 목록에서 감독으로 영화를 검색한다.
