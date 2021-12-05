@@ -26,6 +26,8 @@ import moviebuddy.domain.CsvMovieReader;
 import moviebuddy.domain.Movie;
 import moviebuddy.domain.MovieFinder;
 import moviebuddy.util.FileSystemUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @author springrunner.kr@gmail.com
@@ -47,8 +49,10 @@ public class MovieBuddyApplication {
 
     public void run(String[] args) throws Exception {
         // 객체를 생성하는 부분, 생성된 객체를 사용하는 부분이 분리됨
-        final MovieBuddyFactory movieBuddyFactory = new MovieBuddyFactory();
-        MovieFinder movieFinder = movieBuddyFactory.movieFinder();
+        final ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(MovieBuddyFactory.class);
+
+        final MovieFinder movieFinder = applicationContext.getBean(MovieFinder.class);
 
         final AtomicBoolean running = new AtomicBoolean(true);
         final BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
