@@ -9,18 +9,20 @@ moviebuddy/util/FileSystemUtils.java
  moviebuddy.util.FileSystemUtils
 moviebuddy/domain/Movie.java
  moviebuddy.domain.Movie
+moviebuddy/MovieBuddyFactory.java
+ moviebuddy.MovieBuddyFactory
+ moviebuddy.MovieBuddyFactory$DataSourceModule
+ moviebuddy.MovieBuddyFactory$DomainModuleConfig
+moviebuddy/domain/MovieReader.java
+ moviebuddy.domain.MovieReader
 moviebuddy/domain/JaxbMovieReader.java
  moviebuddy.domain.JaxbMovieReader
  moviebuddy.domain.JaxbMovieReader$MovieData
  moviebuddy.domain.JaxbMovieReader$MovieMetaData
-moviebuddy/domain/MovieReader.java
- moviebuddy.domain.MovieReader
 moviebuddy/domain/CsvMovieReader.java
  moviebuddy.domain.CsvMovieReader
-moviebuddy/domain/MovieFinder.java
- moviebuddy.domain.MovieFinder
-moviebuddy/MovieBuddyFactory.java
- moviebuddy.MovieBuddyFactory
 moviebuddy/MovieBuddyApplication.java
  moviebuddy.MovieBuddyApplication
  moviebuddy.MovieBuddyApplication$Command
+moviebuddy/domain/MovieFinder.java
+ moviebuddy.domain.MovieFinder

@@ -7,6 +7,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 import moviebuddy.ApplicationException;
+import org.springframework.stereotype.Repository;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
@@ -16,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Repository
 public class JaxbMovieReader implements MovieReader {
     @Override
     public List<Movie> loadMovies() {
@@ -47,7 +49,8 @@ public class JaxbMovieReader implements MovieReader {
         }
     }
 
-    @Getter @Setter
+    @Getter
+    @Setter
     public static class MovieData {
         private String title;
         private List<String> genres;

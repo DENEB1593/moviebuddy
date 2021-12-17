@@ -1,14 +1,21 @@
 package moviebuddy.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@Service
 public class MovieFinder {
 
     private final MovieReader movieFinder;
 
-    public MovieFinder(MovieReader movieReader) {
+    @Autowired  // 생성자에 Autowired를 추가해주면 의존성 주입 진행한다.
+    // 생성자의 매개변수가 1개인 경우 Autowired를 생성해도 되지만, 2개 이상인 경우 Autowired를 지정해줘야한다
+    public MovieFinder(@Qualifier("csvMovieReader") MovieReader movieReader) {
         this.movieFinder = Objects.requireNonNull(movieReader);
     }
 

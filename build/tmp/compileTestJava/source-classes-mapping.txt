@@ -2,3 +2,5 @@ moviebuddy/domain/JaxbMovieReaderTest.java
  moviebuddy.domain.JaxbMovieReaderTest
 moviebuddy/domain/MovieFinderTest.java
  moviebuddy.domain.MovieFinderTest
+moviebuddy/domain/BeanScopeTest.java
+ moviebuddy.domain.BeanScopeTest
