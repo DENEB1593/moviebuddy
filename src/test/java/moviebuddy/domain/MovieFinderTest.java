@@ -3,20 +3,38 @@ package moviebuddy.domain;
 import moviebuddy.MovieBuddyFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.List;
 
 /**
  * @author springrunner.kr@gmail.com
  */
+@SpringJUnitConfig(MovieBuddyFactory.class)		// ExtendWith,ContextConfiguration을 포함한 메타 어노테이션
+//@ExtendWith(SpringExtension.class)	// 테스트 전략 실행을 확장할 때 사용함, 테스트용 스프링 컨테이너 지원
+//@ContextConfiguration(classes = MovieBuddyFactory.class) // 스프링 테스트 컨텍스트 지원, ContextConfiguration를 지정 시 해당 정보로 빈을 구성함
 public class MovieFinderTest {
 
-	final ApplicationContext applicationContext =
-			new AnnotationConfigApplicationContext(MovieBuddyFactory.class);		//MovieBuddyFactory의 빈정보를 등록
+	@Autowired
+	MovieFinder movieFinder;
 
-	final MovieFinder movieFinder = applicationContext.getBean(MovieFinder.class);	// 빈을 읽어옴
+	// 생성자 주입
+//	@Autowired
+//	public MovieFinderTest(MovieFinder movieFinder) {
+//		this.movieFinder = movieFinder;
+//	}
+
+	// set 메소드
+//	@Autowired
+//	void setMovieFinder(MovieFinder movieFinder) {
+//		this.movieFinder = movieFinder;
+//	}
 
 	@Test
 	void NotEmpty_directedBy() {
