@@ -1,6 +1,6 @@
-moviebuddy/data/JaxbMovieReaderTest.java
- moviebuddy.data.JaxbMovieReaderTest
 moviebuddy/domain/MovieFinderTest.java
  moviebuddy.domain.MovieFinderTest
 moviebuddy/domain/BeanScopeTest.java
  moviebuddy.domain.BeanScopeTest
+moviebuddy/data/JaxbMovieReaderTest.java
+ moviebuddy.data.JaxbMovieReaderTest

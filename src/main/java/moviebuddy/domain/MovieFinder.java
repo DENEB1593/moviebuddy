@@ -15,7 +15,7 @@ public class MovieFinder {
 
     @Autowired  // 생성자에 Autowired를 추가해주면 의존성 주입 진행한다.
     // 생성자의 매개변수가 1개인 경우 Autowired를 생성해도 되지만, 2개 이상인 경우 Autowired를 지정해줘야한다
-    public MovieFinder(@Qualifier("csvMovieReader") MovieReader movieReader) {
+    public MovieFinder(MovieReader movieReader) {
         this.movieFinder = Objects.requireNonNull(movieReader);
     }
 

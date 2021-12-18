@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="moviebuddy.data.JaxbMovieReaderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-18T17:59:47" hostname="DESKTOP-36VORJ0" time="0.407">
+  <properties/>
+  <testcase name="NotEmpty_LoadedMovies()" classname="moviebuddy.data.JaxbMovieReaderTest" time="0.407"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[12월 19, 2021 2:59:47 오전 org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+12월 19, 2021 2:59:47 오전 org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1c8be30a, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2a3b0f9d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2600de73, org.springframework.test.context.support.DirtiesContextTestExecutionListener@105ebab5, org.springframework.test.context.event.EventPublishingTestExecutionListener@530e9807]
+]]></system-err>
+</testsuite>
