@@ -1,30 +1,32 @@
-moviebuddy/domain/Movie.java
- moviebuddy.domain.Movie
+moviebuddy/domain/XmlMovieReader.java
+ moviebuddy.domain.XmlMovieReader
 moviebuddy/ApplicationException.java
  moviebuddy.ApplicationException
  moviebuddy.ApplicationException$CommandNotFoundException
  moviebuddy.ApplicationException$InvalidCommandArgumentsException
  moviebuddy.ApplicationException$UndefinedCommandActionException
-moviebuddy/util/FileSystemUtils.java
- moviebuddy.util.FileSystemUtils
-moviebuddy/MovieBuddyFactory.java
- moviebuddy.MovieBuddyFactory
- moviebuddy.MovieBuddyFactory$DataSourceModule
- moviebuddy.MovieBuddyFactory$DomainModuleConfig
-moviebuddy/domain/XmlMovieReader.java
- moviebuddy.domain.XmlMovieReader
 moviebuddy/data/CsvMovieReader.java
  moviebuddy.data.CsvMovieReader
+moviebuddy/util/FileSystemUtils.java
+ moviebuddy.util.FileSystemUtils
+moviebuddy/domain/Movie.java
+ moviebuddy.domain.Movie
 moviebuddy/domain/MovieReader.java
  moviebuddy.domain.MovieReader
 moviebuddy/MovieBuddyProfile.java
  moviebuddy.MovieBuddyProfile
-moviebuddy/data/JaxbMovieReader.java
- moviebuddy.data.JaxbMovieReader
- moviebuddy.data.JaxbMovieReader$MovieData
- moviebuddy.data.JaxbMovieReader$MovieMetaData
+moviebuddy/data/XmlMovieReader.java
+ moviebuddy.data.XmlMovieReader
+ moviebuddy.data.XmlMovieReader$MovieData
+ moviebuddy.data.XmlMovieReader$MovieMetaData
 moviebuddy/MovieBuddyApplication.java
  moviebuddy.MovieBuddyApplication
  moviebuddy.MovieBuddyApplication$Command
 moviebuddy/domain/MovieFinder.java
  moviebuddy.domain.MovieFinder
+moviebuddy/MovieBuddyFactory.java
+ moviebuddy.MovieBuddyFactory
+ moviebuddy.MovieBuddyFactory$DataSourceModule
+ moviebuddy.MovieBuddyFactory$DomainModuleConfig
+moviebuddy/data/AbstractMetadataResourceMovieReader.java
+ moviebuddy.data.AbstractMetadataResourceMovieReader

@@ -1,9 +1,5 @@
 package moviebuddy.data;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 import moviebuddy.ApplicationException;
@@ -11,31 +7,43 @@ import moviebuddy.MovieBuddyProfile;
 import moviebuddy.domain.Movie;
 import moviebuddy.domain.MovieReader;
 import org.springframework.context.annotation.Profile;
+import org.springframework.oxm.Unmarshaller;
 import org.springframework.stereotype.Repository;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Profile(MovieBuddyProfile.XML_MODE)
 @Repository
-public class JaxbMovieReader implements MovieReader {
+public class XmlMovieReader extends AbstractMetadataResourceMovieReader implements MovieReader {
+
+    // Unmarshaller  객체 주입
+    private final Unmarshaller unmarshaller;
+
+    public XmlMovieReader(Unmarshaller unmarshaller) {
+        this.unmarshaller = Objects.requireNonNull(unmarshaller);
+    }
+
     @Override
     public List<Movie> loadMovies() {
         try {
-            final JAXBContext jaxb = JAXBContext.newInstance(MovieMetaData.class);
-            final Unmarshaller unmarshaller = jaxb.createUnmarshaller();
+            final InputStream content = getMetadataResource().getInputStream();
 
-            final InputStream content =ClassLoader.getSystemResourceAsStream("movie_metadata.xml");
+            // AbstractMetadataResourceMovieReader 상속받아 metadata를 가져온다
+//            final InputStream content =ClassLoader.getSystemResourceAsStream(getMetadata());
             final Source source = new StreamSource(content);
             final MovieMetaData metaData = (MovieMetaData) unmarshaller.unmarshal(source);
 
             return metaData.toMovies();
 
-        } catch (JAXBException e) {
+        } catch (IOException e) {
             throw new ApplicationException("failed to load movies data", e);
         }
     }

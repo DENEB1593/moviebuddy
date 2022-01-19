@@ -1,18 +1,21 @@
 package moviebuddy.data;
 
+import moviebuddy.MovieBuddyFactory;
 import moviebuddy.MovieBuddyProfile;
 import moviebuddy.domain.Movie;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.List;
 
 @ActiveProfiles(MovieBuddyProfile.XML_MODE)
-@SpringJUnitConfig(XmlMovieReader.class)
-public class JaxbMovieReaderTest {
+@SpringJUnitConfig(MovieBuddyFactory.class)
+@TestPropertySource(properties = "movie.metadata=movie_metadata.xml")
+public class XmlMovieReaderTest {
 
     @Autowired
     XmlMovieReader movieReader;
