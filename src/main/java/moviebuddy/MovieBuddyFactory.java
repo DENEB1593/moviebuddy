@@ -1,8 +1,13 @@
 package moviebuddy;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
 import moviebuddy.data.CsvMovieReader;
 import moviebuddy.data.XmlMovieReader;
+import moviebuddy.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.oxm.Unmarshaller;
@@ -10,6 +15,8 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 // 빈 메타정보를 설정하며..
 @Configuration
@@ -25,6 +32,14 @@ public class MovieBuddyFactory {
         marshaller.setPackagesToScan("moviebuddy");
 
         return marshaller;
+    }
+
+    @Bean
+    public CacheManager caffineCacheManger() {
+        CaffeineCacheManager cacheManager = new CaffeineCacheManager();
+        cacheManager.setCaffeine(Caffeine.newBuilder().expireAfterWrite(3, TimeUnit.SECONDS));
+
+        return cacheManager;
     }
 
 

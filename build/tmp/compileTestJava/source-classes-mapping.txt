@@ -1,12 +1,14 @@
 moviebuddy/data/XmlMovieReaderTest.java
  moviebuddy.data.XmlMovieReaderTest
-moviebuddy/data/CsvMovieReaderTest.java
- moviebuddy.data.CsvMovieReaderTest
+moviebuddy/domain/BeanScopeTest.java
+ moviebuddy.domain.BeanScopeTest
 moviebuddy/data/JaxbMovieReaderTest.java
  moviebuddy.data.JaxbMovieReaderTest
 moviebuddy/domain/MovieFinderTest.java
  moviebuddy.domain.MovieFinderTest
+moviebuddy/CaffineTests.java
+ moviebuddy.CaffineTests
 moviebuddy/PropertiesTests.java
  moviebuddy.PropertiesTests
-moviebuddy/domain/BeanScopeTest.java
- moviebuddy.domain.BeanScopeTest
+moviebuddy/data/CsvMovieReaderTest.java
+ moviebuddy.data.CsvMovieReaderTest
