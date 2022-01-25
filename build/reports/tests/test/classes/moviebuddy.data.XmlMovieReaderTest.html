@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class moviebuddy.data.XmlMovieReaderTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class moviebuddy.data.XmlMovieReaderTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/moviebuddy.data.html">moviebuddy.data</a> &gt; XmlMovieReaderTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.021s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">check_Type()</td>
+<td class="success">0.021s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>00:37:34.809 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+00:37:34.826 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+00:37:34.861 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [moviebuddy.data.XmlMovieReaderTest] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+00:37:34.889 [Test worker] DEBUG org.springframework.test.context.support.AbstractDelegatingSmartContextLoader - Delegating to AnnotationConfigContextLoader to process context configuration [ContextConfigurationAttributes@95a58b1 declaringClass = 'moviebuddy.data.XmlMovieReaderTest', classes = '{class moviebuddy.MovieBuddyFactory}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+00:37:34.921 [Test worker] DEBUG org.springframework.test.context.support.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [moviebuddy.data.XmlMovieReaderTest]: using defaults.
+00:37:34.922 [Test worker] INFO org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+00:37:34.930 [Test worker] DEBUG org.springframework.test.context.support.DefaultTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+00:37:34.932 [Test worker] DEBUG org.springframework.test.context.support.DefaultTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+00:37:34.933 [Test worker] DEBUG org.springframework.test.context.support.DefaultTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+00:37:34.933 [Test worker] INFO org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@33412fd4, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@30b6a530, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@49cf438d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d5c1348, org.springframework.test.context.event.EventPublishingTestExecutionListener@2759a0b8]
+00:37:34.935 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@321dd86f testClass = XmlMovieReaderTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+00:37:34.946 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@321dd86f testClass = XmlMovieReaderTest, testInstance = moviebuddy.data.XmlMovieReaderTest@169ce4a9, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]].
+00:37:34.946 [Test worker] DEBUG org.springframework.test.context.support.AbstractDelegatingSmartContextLoader - Delegating to AnnotationConfigContextLoader to load context from [MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+00:37:34.947 [Test worker] DEBUG org.springframework.test.context.support.AbstractGenericContextLoader - Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+00:37:35.002 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Activating profiles [xml_mode]
+00:37:35.002 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {movie.metadata=movie_metadata.xml}
+00:37:35.002 [Test worker] DEBUG org.springframework.test.context.support.AnnotationConfigContextLoader - Registering component classes: {class moviebuddy.MovieBuddyFactory}
+00:37:35.051 [Test worker] DEBUG org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@320fda80
+00:37:35.074 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+00:37:35.173 [Test worker] DEBUG org.springframework.context.annotation.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\Users\leeka\IdeaProjects\moviebuddy\build\classes\java\main\moviebuddy\MovieBuddyFactory$DataSourceModuleConfig.class]
+00:37:35.173 [Test worker] DEBUG org.springframework.context.annotation.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\Users\leeka\IdeaProjects\moviebuddy\build\classes\java\main\moviebuddy\MovieBuddyFactory$DomainModuleConfig.class]
+00:37:35.191 [Test worker] DEBUG org.springframework.context.annotation.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\Users\leeka\IdeaProjects\moviebuddy\build\classes\java\main\moviebuddy\data\XmlMovieReader.class]
+00:37:35.193 [Test worker] DEBUG org.springframework.context.annotation.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\Users\leeka\IdeaProjects\moviebuddy\build\classes\java\main\moviebuddy\domain\MovieFinder.class]
+00:37:35.326 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+00:37:35.329 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+00:37:35.330 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+00:37:35.332 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+00:37:35.342 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'movieBuddyFactory'
+00:37:35.347 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'movieBuddyFactory.DataSourceModuleConfig'
+00:37:35.348 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'movieBuddyFactory.DomainModuleConfig'
+00:37:35.348 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'xmlMovieReader'
+00:37:35.363 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Autowiring by type from bean name 'cachingMovieReaderFactory' via factory method to bean named 'org.springframework.context.support.GenericApplicationContext@320fda80'
+00:37:35.373 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'xmlMovieReader'
+00:37:35.373 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Bean creation exception on singleton FactoryBean type check: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cachingMovieReaderFactory' defined in class path resource [moviebuddy/MovieBuddyFactory$DataSourceModuleConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.aop.framework.ProxyFactoryBean]: Factory method 'cachingMovieReaderFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'xmlMovieReader': Requested bean is currently in creation: Is there an unresolvable circular reference?
+00:37:35.375 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jaxb2Marshaller'
+00:37:35.399 [Test worker] DEBUG org.springframework.oxm.jaxb.Jaxb2Marshaller - Creating JAXBContext by scanning packages [moviebuddy]
+00:37:35.430 [Test worker] DEBUG org.springframework.oxm.jaxb.Jaxb2Marshaller - Found JAXB2 classes: [class moviebuddy.data.XmlMovieReader$MovieMetaData]
+00:37:35.592 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Autowiring by type from bean name 'xmlMovieReader' via constructor to bean named 'jaxb2Marshaller'
+00:37:35.625 [Test worker] DEBUG org.springframework.core.env.PropertySourcesPropertyResolver - Found key 'movie.metadata' in PropertySource 'Inlined Test Properties' with value of type String
+00:37:35.629 [Test worker] INFO moviebuddy.data.XmlMovieReader - class path resource [movie_metadata.xml]is ready
+00:37:35.630 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'movieFinder'
+00:37:35.632 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Autowiring by type from bean name 'movieFinder' via constructor to bean named 'xmlMovieReader'
+00:37:35.633 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cachingMovieReaderFactory'
+00:37:35.633 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Autowiring by type from bean name 'cachingMovieReaderFactory' via factory method to bean named 'org.springframework.context.support.GenericApplicationContext@320fda80'
+00:37:35.634 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'caffineCacheManger'
+00:37:35.656 [Test worker] DEBUG org.springframework.aop.framework.ProxyFactoryBean - Advice has changed; re-caching singleton instance
+00:37:35.667 [Test worker] DEBUG org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Storing ApplicationContext [839899776] in cache under key [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+00:37:35.667 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7e7d85d8 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+00:37:35.670 [Test worker] DEBUG org.springframework.aop.framework.ProxyFactoryBean - Advice has changed; re-caching singleton instance
+00:37:35.670 [Test worker] DEBUG org.springframework.aop.framework.ProxyFactoryBean - Advice has changed; re-caching singleton instance
+00:37:35.678 [Test worker] DEBUG org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [839899776] from cache with key [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+00:37:35.678 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7e7d85d8 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1]
+00:37:35.683 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@321dd86f testClass = XmlMovieReaderTest, testInstance = moviebuddy.data.XmlMovieReaderTest@169ce4a9, testMethod = check_Type@XmlMovieReaderTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+00:37:35.684 [Test worker] DEBUG org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [839899776] from cache with key [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+00:37:35.684 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7e7d85d8 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1]
+00:37:35.686 [Test worker] DEBUG org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [839899776] from cache with key [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+00:37:35.686 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7e7d85d8 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1]
+00:37:35.695 [Test worker] DEBUG org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [839899776] from cache with key [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+00:37:35.696 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7e7d85d8 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1]
+00:37:35.697 [Test worker] DEBUG org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [839899776] from cache with key [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+00:37:35.697 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7e7d85d8 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1]
+00:37:35.697 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - After test method: context [DefaultTestContext@321dd86f testClass = XmlMovieReaderTest, testInstance = moviebuddy.data.XmlMovieReaderTest@169ce4a9, testMethod = check_Type@XmlMovieReaderTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+00:37:35.702 [Test worker] DEBUG org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext [839899776] from cache with key [[MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+00:37:35.702 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7e7d85d8 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1]
+00:37:35.703 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - After test class: context [DefaultTestContext@321dd86f testClass = XmlMovieReaderTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1d06b766 testClass = XmlMovieReaderTest, locations = '{}', classes = '{class moviebuddy.MovieBuddyFactory}', contextInitializerClasses = '[]', activeProfiles = '{xml_mode}', propertySourceLocations = '{}', propertySourceProperties = '{movie.metadata=movie_metadata.xml}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null].
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.6.1</a> at 2022. 1. 26. 오전 12:37:35</p>
+</div>
+</div>
+</body>
+</html>
