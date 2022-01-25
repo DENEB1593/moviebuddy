@@ -16,8 +16,7 @@ public class CachingMovieReader implements MovieReader {
     private final CacheManager cacheManager;
     private final MovieReader target;
 
-    public CachingMovieReader(CacheManager cacheManager,
-                              MovieReader target) {
+    public CachingMovieReader(CacheManager cacheManager, MovieReader target) {
         this.cacheManager = Objects.requireNonNull(cacheManager);
         this.target = Objects.requireNonNull(target);
     }

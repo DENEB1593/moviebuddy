@@ -2,14 +2,17 @@ package moviebuddy;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
+import moviebuddy.cache.CachingAdvice;
 import moviebuddy.data.CachingMovieReader;
 import moviebuddy.data.CsvMovieReader;
 import moviebuddy.data.XmlMovieReader;
 import moviebuddy.domain.Movie;
 import moviebuddy.domain.MovieReader;
+import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.oxm.Unmarshaller;
@@ -56,8 +59,21 @@ public class MovieBuddyFactory {
         // 두개의 Bean이 발견되는 경우 Primary의 빈을 먼저 확인
         @Primary
         @Bean
-        public MovieReader cachingMovieReader(CacheManager cacheManager, MovieReader target) {
-            return new CachingMovieReader(cacheManager, target);
+        public ProxyFactoryBean cachingMovieReaderFactory(ApplicationContext context) {
+            MovieReader target = context.getBean(MovieReader.class);
+            CacheManager cacheManager = context.getBean(CacheManager.class);
+
+            // 프록시 Bean 등록
+            ProxyFactoryBean proxyFactoryBean = new ProxyFactoryBean();
+            proxyFactoryBean.setTarget(target);
+            // proxyFactoryBean.setProxyTargetClass(true);
+            // 클래스 프록시 활성화한다(서브클래스도 활성화한다)
+            // 클래스 프록시 제약사항 (final, 생성자 2번 호출)
+            proxyFactoryBean.addAdvice(new CachingAdvice(cacheManager));
+
+            return proxyFactoryBean;
         }
+
+
     }
 }
