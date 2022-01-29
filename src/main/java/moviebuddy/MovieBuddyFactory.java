@@ -8,7 +8,14 @@ import moviebuddy.data.CsvMovieReader;
 import moviebuddy.data.XmlMovieReader;
 import moviebuddy.domain.Movie;
 import moviebuddy.domain.MovieReader;
+import org.aopalliance.aop.Advice;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.Pointcut;
 import org.springframework.aop.framework.ProxyFactoryBean;
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.support.NameMatchMethodPointcut;
+import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
@@ -18,6 +25,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.oxm.Unmarshaller;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
+import javax.cache.annotation.CacheResult;
 import java.io.FileNotFoundException;
 import java.lang.annotation.Target;
 import java.net.URISyntaxException;
@@ -48,6 +56,19 @@ public class MovieBuddyFactory {
         return cacheManager;
     }
 
+    @Bean
+    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
+        return new DefaultAdvisorAutoProxyCreator();
+    }
+
+    @Bean
+    public Advisor cachingAdvisor(CacheManager cacheManager) {
+        AnnotationMatchingPointcut pointcut = new AnnotationMatchingPointcut(null, CacheResult.class);
+        Advice advice = new CachingAdvice(cacheManager);
+
+        // Advisor = Pointcut(대상선정 알고리즘) + Advice(부가기능)
+        return new DefaultPointcutAdvisor(pointcut, advice);
+    }
 
     // 내부 설정(Configuration) 등록
     @Configuration
@@ -56,24 +77,5 @@ public class MovieBuddyFactory {
 
     @Configuration
     static class DataSourceModuleConfig {
-        // 두개의 Bean이 발견되는 경우 Primary의 빈을 먼저 확인
-        @Primary
-        @Bean
-        public ProxyFactoryBean cachingMovieReaderFactory(ApplicationContext context) {
-            MovieReader target = context.getBean(MovieReader.class);
-            CacheManager cacheManager = context.getBean(CacheManager.class);
-
-            // 프록시 Bean 등록
-            ProxyFactoryBean proxyFactoryBean = new ProxyFactoryBean();
-            proxyFactoryBean.setTarget(target);
-            // proxyFactoryBean.setProxyTargetClass(true);
-            // 클래스 프록시 활성화한다(서브클래스도 활성화한다)
-            // 클래스 프록시 제약사항 (final, 생성자 2번 호출)
-            proxyFactoryBean.addAdvice(new CachingAdvice(cacheManager));
-
-            return proxyFactoryBean;
-        }
-
-
     }
 }
