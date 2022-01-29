@@ -3,6 +3,7 @@ package moviebuddy;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import moviebuddy.cache.CachingAdvice;
+import moviebuddy.cache.CachingAspect;
 import moviebuddy.data.CachingMovieReader;
 import moviebuddy.data.CsvMovieReader;
 import moviebuddy.data.XmlMovieReader;
@@ -38,6 +39,7 @@ import java.util.concurrent.TimeUnit;
 @ComponentScan(basePackages = {"moviebuddy"})   // 컴포넌트 스캔을 한다 basePackages를 통해 패키지 번위를 지
 @Import({MovieBuddyFactory.DomainModuleConfig.class // Import를 사용하면 다른 설정(Configuaration)에서 Bean정보를 불러옴
         , MovieBuddyFactory.DataSourceModuleConfig.class})
+@EnableAspectJAutoProxy // AspectJ 기능을 활성화 시킨다.
 public class MovieBuddyFactory {
 
     @Bean
@@ -57,6 +59,11 @@ public class MovieBuddyFactory {
     }
 
     @Bean
+    public CachingAspect cachingAspect(CacheManager cacheManager) {
+        return new CachingAspect(cacheManager);
+    }
+
+/*    @Bean
     public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
         return new DefaultAdvisorAutoProxyCreator();
     }
@@ -68,7 +75,7 @@ public class MovieBuddyFactory {
 
         // Advisor = Pointcut(대상선정 알고리즘) + Advice(부가기능)
         return new DefaultPointcutAdvisor(pointcut, advice);
-    }
+    }*/
 
     // 내부 설정(Configuration) 등록
     @Configuration
