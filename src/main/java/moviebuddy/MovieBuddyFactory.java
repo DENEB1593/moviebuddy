@@ -1,36 +1,17 @@
 package moviebuddy;
 
-import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import moviebuddy.cache.CachingAdvice;
-import moviebuddy.cache.CachingAspect;
-import moviebuddy.data.CachingMovieReader;
-import moviebuddy.data.CsvMovieReader;
-import moviebuddy.data.XmlMovieReader;
-import moviebuddy.domain.Movie;
-import moviebuddy.domain.MovieReader;
-import org.aopalliance.aop.Advice;
-import org.springframework.aop.Advisor;
-import org.springframework.aop.Pointcut;
-import org.springframework.aop.framework.ProxyFactoryBean;
-import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.aop.support.DefaultPointcutAdvisor;
-import org.springframework.aop.support.NameMatchMethodPointcut;
-import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CachingConfigurer;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
-import org.springframework.context.ApplicationContext;
+import org.springframework.cache.interceptor.*;
 import org.springframework.context.annotation.*;
-import org.springframework.core.env.Environment;
-import org.springframework.oxm.Unmarshaller;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.SchedulingConfigurer;
 
-import javax.cache.annotation.CacheResult;
-import java.io.FileNotFoundException;
-import java.lang.annotation.Target;
-import java.net.URISyntaxException;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 // 빈 메타정보를 설정하며..
@@ -39,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 @ComponentScan(basePackages = {"moviebuddy"})   // 컴포넌트 스캔을 한다 basePackages를 통해 패키지 번위를 지
 @Import({MovieBuddyFactory.DomainModuleConfig.class // Import를 사용하면 다른 설정(Configuaration)에서 Bean정보를 불러옴
         , MovieBuddyFactory.DataSourceModuleConfig.class})
-@EnableAspectJAutoProxy // AspectJ 기능을 활성화 시킨다.
-public class MovieBuddyFactory {
+@EnableCaching //선언전 캐쉬기능 동작
+public class MovieBuddyFactory implements CachingConfigurer {
 
     @Bean
     public Jaxb2Marshaller jaxb2Marshaller() {
@@ -58,10 +39,13 @@ public class MovieBuddyFactory {
         return cacheManager;
     }
 
+
+    /*
     @Bean
     public CachingAspect cachingAspect(CacheManager cacheManager) {
         return new CachingAspect(cacheManager);
     }
+     */
 
 /*    @Bean
     public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
@@ -76,6 +60,29 @@ public class MovieBuddyFactory {
         // Advisor = Pointcut(대상선정 알고리즘) + Advice(부가기능)
         return new DefaultPointcutAdvisor(pointcut, advice);
     }*/
+
+    @Override
+    public CacheManager cacheManager() {
+        // cachemanager
+        return caffineCacheManger();
+    }
+
+    @Override
+    public CacheResolver cacheResolver() {
+        return new SimpleCacheResolver(caffineCacheManger());
+    }
+
+    @Override
+    public KeyGenerator keyGenerator() {
+        return new SimpleKeyGenerator();
+    }
+
+    @Override
+    public CacheErrorHandler errorHandler() {
+        // @EnableAsync -> AsyncConfigurer
+        // @EnableScheduling -> SchedulingConfigurer
+        return new SimpleCacheErrorHandler();
+    }
 
     // 내부 설정(Configuration) 등록
     @Configuration

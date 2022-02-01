@@ -1,38 +1,38 @@
 moviebuddy/domain/Movie.java
  moviebuddy.domain.Movie
-moviebuddy/domain/MovieFinder.java
- moviebuddy.domain.MovieFinder
+moviebuddy/domain/MovieReader.java
+ moviebuddy.domain.MovieReader
 moviebuddy/data/AbstractMetadataResourceMovieReader.java
  moviebuddy.data.AbstractMetadataResourceMovieReader
-moviebuddy/data/XmlMovieReader.java
- moviebuddy.data.XmlMovieReader
- moviebuddy.data.XmlMovieReader$MovieData
- moviebuddy.data.XmlMovieReader$MovieMetaData
+moviebuddy/domain/XmlMovieReader.java
+ moviebuddy.domain.XmlMovieReader
+moviebuddy/util/FileSystemUtils.java
+ moviebuddy.util.FileSystemUtils
 moviebuddy/ApplicationException.java
  moviebuddy.ApplicationException
  moviebuddy.ApplicationException$CommandNotFoundException
  moviebuddy.ApplicationException$InvalidCommandArgumentsException
  moviebuddy.ApplicationException$UndefinedCommandActionException
-moviebuddy/cache/CachingAdvice.java
- moviebuddy.cache.CachingAdvice
-moviebuddy/util/FileSystemUtils.java
- moviebuddy.util.FileSystemUtils
-moviebuddy/MovieBuddyProfile.java
- moviebuddy.MovieBuddyProfile
-moviebuddy/domain/XmlMovieReader.java
- moviebuddy.domain.XmlMovieReader
 moviebuddy/data/CsvMovieReader.java
  moviebuddy.data.CsvMovieReader
-moviebuddy/domain/MovieReader.java
- moviebuddy.domain.MovieReader
 moviebuddy/data/CachingMovieReader.java
  moviebuddy.data.CachingMovieReader
 moviebuddy/cache/CachingAspect.java
  moviebuddy.cache.CachingAspect
+moviebuddy/MovieBuddyProfile.java
+ moviebuddy.MovieBuddyProfile
+moviebuddy/data/XmlMovieReader.java
+ moviebuddy.data.XmlMovieReader
+ moviebuddy.data.XmlMovieReader$MovieData
+ moviebuddy.data.XmlMovieReader$MovieMetaData
 moviebuddy/MovieBuddyApplication.java
  moviebuddy.MovieBuddyApplication
  moviebuddy.MovieBuddyApplication$Command
+moviebuddy/domain/MovieFinder.java
+ moviebuddy.domain.MovieFinder
 moviebuddy/MovieBuddyFactory.java
  moviebuddy.MovieBuddyFactory
  moviebuddy.MovieBuddyFactory$DataSourceModuleConfig
  moviebuddy.MovieBuddyFactory$DomainModuleConfig
+moviebuddy/cache/CachingAdvice.java
+ moviebuddy.cache.CachingAdvice
