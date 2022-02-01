@@ -25,14 +25,14 @@ moviebuddy/data/XmlMovieReader.java
  moviebuddy.data.XmlMovieReader
  moviebuddy.data.XmlMovieReader$MovieData
  moviebuddy.data.XmlMovieReader$MovieMetaData
-moviebuddy/MovieBuddyApplication.java
- moviebuddy.MovieBuddyApplication
- moviebuddy.MovieBuddyApplication$Command
+moviebuddy/cache/CachingAdvice.java
+ moviebuddy.cache.CachingAdvice
 moviebuddy/domain/MovieFinder.java
  moviebuddy.domain.MovieFinder
 moviebuddy/MovieBuddyFactory.java
  moviebuddy.MovieBuddyFactory
  moviebuddy.MovieBuddyFactory$DataSourceModuleConfig
  moviebuddy.MovieBuddyFactory$DomainModuleConfig
-moviebuddy/cache/CachingAdvice.java
- moviebuddy.cache.CachingAdvice
+moviebuddy/MovieBuddyApplication.java
+ moviebuddy.MovieBuddyApplication
+ moviebuddy.MovieBuddyApplication$Command

@@ -4,20 +4,22 @@ moviebuddy/ReflectionTests.java
 moviebuddy/data/CachingMovieReaderTest.java
  moviebuddy.data.CachingMovieReaderTest
  moviebuddy.data.CachingMovieReaderTest$DummyMovieReader
-moviebuddy/data/XmlMovieReaderTest.java
- moviebuddy.data.XmlMovieReaderTest
+moviebuddy/PropertiesTests.java
+ moviebuddy.PropertiesTests
 moviebuddy/data/CsvMovieReaderTest.java
  moviebuddy.data.CsvMovieReaderTest
 moviebuddy/data/JaxbMovieReaderTest.java
  moviebuddy.data.JaxbMovieReaderTest
-moviebuddy/domain/MovieFinderTest.java
- moviebuddy.domain.MovieFinderTest
-moviebuddy/CaffineTests.java
- moviebuddy.CaffineTests
-moviebuddy/PropertiesTests.java
- moviebuddy.PropertiesTests
 moviebuddy/JDKDynamicProxyTests.java
  moviebuddy.JDKDynamicProxyTests
  moviebuddy.JDKDynamicProxyTests$PerformanceInvocationHandler
+moviebuddy/CaffineTests.java
+ moviebuddy.CaffineTests
+moviebuddy/data/XmlMovieReaderTest.java
+ moviebuddy.data.XmlMovieReaderTest
+moviebuddy/domain/MovieFinderTest.java
+ moviebuddy.domain.MovieFinderTest
 moviebuddy/domain/BeanScopeTest.java
  moviebuddy.domain.BeanScopeTest
+moviebuddy/JdkLocalTests.java
+ moviebuddy.JdkLocalTests
